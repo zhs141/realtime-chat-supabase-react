@@ -18,11 +18,9 @@ jobs:
 
       - name: Build and Deploy
         run: |
+          npm audit
           npm run build
-          npm run dev
-          h
-          o
-          npm run deploy    # 这里根据你的实际部署命令来设置，可能是 npm run deploy 或其他命令
+          npm test    # 这里根据你的实际部署命令来设置，可能是 npm run deploy 或其他命令
 
       - name: Deploy to Hosting Provider
         env:
