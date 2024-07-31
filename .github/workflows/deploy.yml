@@ -14,11 +14,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm audit fix
+          npm audit
+          npm install
 
       - name: Build and Deploy
         run: |
-          npm audit
           npm run build
           npm test    # 这里根据你的实际部署命令来设置，可能是 npm run deploy 或其他命令
 
